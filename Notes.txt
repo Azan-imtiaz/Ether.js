@@ -1,0 +1,31 @@
+
+
+
+ethers.utils.formatUnits()
+
+in ethers.js it is a versatile function that can format any BigNumber or wei value to a specified unit of cryptocurrency. It allows you to convert values from wei (or any smaller unit) to a human-readable format in various other units like ether, gwei, mwei, and more.
+
+const { ethers } = require("ethers");
+
+// A BigNumber value representing 1.5 ether in wei
+const valueInWei = ethers.utils.parseUnits("1.5", "ether");    //convert ether(larger) to smaller(like wei in ethereum case) 
+
+// Format that value to ether (which is default if no unit is provided)
+const formattedValueInEther = ethers.utils.formatUnits(valueInWei,"ether");
+console.log(formattedValueInEther); // Outputs: "1.5"
+
+
+
+
+ethers.utils.parseUnits
+
+It is the reverse of formatUnits. It converts a value in a specific cryptocurrency unit (such as ether, gwei, etc.) into the smallest unit (typically wei for Ethereum). This is helpful when you need to take user input or data in a more human-readable form (like ether) and convert it into wei for transactions or smart contract interactions.
+
+const { ethers } = require("ethers");
+
+// 1.5 Ether as a string
+const valueInEther = "1.5";
+
+// Convert 1.5 Ether to wei
+const valueInWei = ethers.utils.parseUnits(valueInEther, "ether");
+console.log(valueInWei.toString()); // Outputs: "1500000000000000000" (in wei)
