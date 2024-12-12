@@ -30,3 +30,9 @@ const valueInEther = "1.5";
 // Convert 1.5 Ether to wei
 const valueInWei = ethers.utils.parseUnits(valueInEther, "ether");
 console.log(valueInWei.toString()); // Outputs: "1500000000000000000" (in wei)
+
+
+
+In parseUnits: The unit indicates how many decimal places to multiply the human-readable input by to convert it to the smallest unit (e.g., Wei).
+
+In formatUnits: The unit indicates how many decimal places to divide the input (smallest unit) by to format it into a human-readable value.
