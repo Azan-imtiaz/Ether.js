@@ -5,7 +5,9 @@ pragma solidity >=0.8.2 <0.9.0;
 
 contract Wallet {
 
-string public name="wallet";
+string public name="wallet"';
+
+
 uint num;
 
 function setValue(uint _num) public {

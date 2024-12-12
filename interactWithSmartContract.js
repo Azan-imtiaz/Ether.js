@@ -7,8 +7,11 @@ let contractAddress = "0xe69e4d80605f21e4ef2af284410d75efe2ddc004";
 
 const { abi } = require("./abi");
 
+
 // Create a provider
 const provider = new ethers.providers.JsonRpcProvider("https://polygon-amoy.g.alchemy.com/v2/R8alUv5e5htjl7yKk8MbIVlJdNw9OY32");
+
+
 
 // Create wallet
 const wallet = new ethers.Wallet(private_key, provider);
@@ -89,7 +92,8 @@ async function sendEthToContract() {
 async function sendEthToUser(address) {
   try {
     // Estimate gas for sending ETH to a user
-    const estimatedGas = await contract.estimateGas.sendEthUser(address, {
+    const estimatedGas = await contract.estimateGas.sendEthUser(address 
+      , {
       value: ethers.utils.parseEther("0.05"), // Send 0.05 ETH to the specified address
     });
     console.log("Estimated Gas for sendEthUser:", estimatedGas.toString());
